@@ -1,0 +1,10 @@
+Input list:
+<div>
+    <input type="text" [(ngModel)]="status" (keyup.enter)="addStatus()">
+    <button (click)="addStatus()">Update</button>
+</div>
+<div>
+    <ul>
+        <li *ngFor="let stat of statusList">{{stat}}</li>
+    </ul>
+</div>
