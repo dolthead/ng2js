@@ -3,7 +3,12 @@
     app.AppModule =
         ng.core.NgModule({
             imports: [ng.platformBrowser.BrowserModule],
-            declarations: [app.AppComponent, app.InputListComponent],
+            declarations: [
+                app.AppComponent,
+                app.InputListComponent,
+                app.AboutComponent,
+                ng.common.FORM_DIRECTIVES
+            ],
             bootstrap: [app.AppComponent]
         })
         .Class({
