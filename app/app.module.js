@@ -1,25 +1,30 @@
 (function (app) {
 
+    var NgModule = ng.core.NgModule;
+    var bootstrap = ng.platformBrowserDynamic.platformBrowserDynamic;
+
     app.AppModule =
-        ng.core.NgModule({
-            imports: [ng.platformBrowser.BrowserModule],
-            declarations: [
+        NgModule({
+            imports: [
+                ng.platformBrowser.BrowserModule,
+                ng.forms.FormsModule
+            ],
+            declarations: [ // any components, directives and pipes defined in this module
                 app.AppComponent,
                 app.InputListComponent,
-                app.AboutComponent,
-                ng.common.FORM_DIRECTIVES
+                app.AboutComponent
             ],
+            providers: [], // any services used in this module
             bootstrap: [app.AppComponent]
         })
         .Class({
-            constructor: function () {
+            constructor: function AppModule() {
             }
         });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        ng.platformBrowserDynamic
-            .platformBrowserDynamic()
-            .bootstrapModule(app.AppModule);
-    });
+    function domBootstrap() {
+        bootstrap().bootstrapModule(app.AppModule);
+    }
+    document.addEventListener('DOMContentLoaded', domBootstrap);
 
 })(window.app || (window.app = {}));

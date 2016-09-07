@@ -6,9 +6,10 @@
             // template: 'simple input list template',
             templateUrl: 'app/input-list.component.html',
             // directives: [ng.common.FORM_DIRECTIVES] // for ngModel
+            // imports: [ng.common.FORM_DIRECTIVES]
         })
         .Class({
-            constructor: function () {
+            constructor: function InputListComponent() {
                 console.log('input-list constructor');
                 var self = this;
                 self.status = '';

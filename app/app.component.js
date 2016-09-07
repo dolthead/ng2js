@@ -8,7 +8,7 @@
             // directives: [app.InputListComponent, ng.common.FORM_DIRECTIVES]
         })
         .Class({
-            constructor: function () {
+            constructor: function AppComponent() {
             }
         });
 
