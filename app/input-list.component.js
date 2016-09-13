@@ -3,21 +3,20 @@
     app.InputListComponent =
         ng.core.Component({
             selector: 'input-list',
-            // template: 'simple input list template',
-            templateUrl: 'app/input-list.component.html',
-            // directives: [ng.common.FORM_DIRECTIVES] // for ngModel
-            // imports: [ng.common.FORM_DIRECTIVES]
+            templateUrl: 'app/input-list.component.html'
         })
         .Class({
             constructor: function InputListComponent() {
-                console.log('input-list constructor');
                 var self = this;
                 self.status = '';
                 self.statusList = [];
+                this.chex = [];
 
                 self.addStatus = function() {
-                    self.statusList.push(this.status);
-                    this.status = '';
+                    if (self.status.trim() !== '') {
+                        self.statusList.push(this.status);
+                        this.status = '';
+                    }
                 }
             }
         });

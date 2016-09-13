@@ -7,7 +7,10 @@
         NgModule({
             imports: [
                 ng.platformBrowser.BrowserModule,
-                ng.forms.FormsModule
+                ng.forms.FormsModule,
+                md.button.MdButtonModule,
+                md.checkbox.MdCheckboxModule
+                // UIRouter
             ],
             declarations: [ // any components, directives and pipes defined in this module
                 app.AppComponent,
@@ -19,12 +22,13 @@
         })
         .Class({
             constructor: function AppModule() {
+                // console.log(window.md);
             }
         });
 
-    function domBootstrap() {
+
+    document.addEventListener('DOMContentLoaded', function () {
         bootstrap().bootstrapModule(app.AppModule);
-    }
-    document.addEventListener('DOMContentLoaded', domBootstrap);
+    });
 
 })(window.app || (window.app = {}));
