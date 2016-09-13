@@ -8,8 +8,10 @@
             imports: [
                 ng.platformBrowser.BrowserModule,
                 ng.forms.FormsModule,
+                md.card.MdCardModule,
                 md.button.MdButtonModule,
-                md.checkbox.MdCheckboxModule
+                md.checkbox.MdCheckboxModule,
+                md.input.MdInputModule
                 // UIRouter
             ],
             declarations: [ // any components, directives and pipes defined in this module

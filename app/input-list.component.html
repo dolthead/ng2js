@@ -1,12 +1,12 @@
-Input list:
 <div>
-    <input type="text" [(ngModel)]="status" (keyup.enter)="addStatus()">
-    <button md-raised-button class="md-raised md-primary" (click)="addStatus()">Update</button>
+    <md-input placeholder="New Item" [(ngModel)]="status" (keyup.enter)="addStatus()"></md-input>
+    <button md-raised-button color="primary" (click)="addStatus()">Update</button>
 </div>
+
 <div>
     <div *ngFor="let stat of statusList; let idx = index">
         <md-checkbox [(ngModel)]="chex[idx]">
-            Checkbox {{idx}}: {{ stat }}
+            {{idx+1}}. {{ stat }}
         </md-checkbox>
     </div>
 </div>
