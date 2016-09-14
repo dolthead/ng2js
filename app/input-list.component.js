@@ -3,19 +3,22 @@
     app.InputListComponent =
         ng.core.Component({
             selector: 'input-list',
-            templateUrl: 'app/input-list.component.html'
+            templateUrl: 'app/input-list.component.html',
+            stylesx:[
+                'input.ng-touched.ng-invalid { border: solid darkred 3px; }'
+            ]
         })
         .Class({
             constructor: function InputListComponent() {
                 var self = this;
                 self.status = '';
                 self.statusList = [];
-                this.chex = [];
 
-                self.addStatus = function() {
-                    if (self.status.trim() !== '') {
-                        self.statusList.push(this.status);
-                        this.status = '';
+                self.addStatus = function(myForm) {
+                    if (!myForm.invalid) {
+                        self.statusList.push({text: this.status, completed: false});
+                        // this.status = '';
+                        myForm.resetForm();
                     }
                 }
             }

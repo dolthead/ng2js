@@ -8,6 +8,7 @@
             imports: [
                 ng.platformBrowser.BrowserModule,
                 ng.forms.FormsModule,
+                // ng.forms.FormGroup,
                 md.card.MdCardModule,
                 md.button.MdButtonModule,
                 md.checkbox.MdCheckboxModule,
@@ -24,7 +25,7 @@
         })
         .Class({
             constructor: function AppModule() {
-                // console.log(window.md);
+                // console.log(ng.forms);
             }
         });
 
