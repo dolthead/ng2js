@@ -20,7 +20,7 @@
                 app.InputListComponent,
                 app.AboutComponent
             ],
-            providers: [], // any services used in this module
+            providers: [app.DataService], // any services used in this module (app)
             bootstrap: [app.AppComponent]
         })
         .Class({

@@ -1,6 +1,6 @@
 <form (ngSubmit)="addStatus(myForm)" class="form-inline" novalidate #myForm="ngForm">
     <div class="form-group">
-        <md-input #newItem="ngModel" type="text" name="newItem" placeholder="New Item"
+        <md-input #newItem="ngModel" type="text" name="newItem" placeholder="New item"
                   [(ngModel)]="status" required></md-input>
         <button type="submit" md-raised-button color="primary">Add</button>
     </div>
@@ -8,7 +8,7 @@
 
 <div>
     <div *ngFor="let status of statusList; let idx = index">
-        <md-checkbox [(ngModel)]="status.completed">
+        <md-checkbox [(ngModel)]="status.completed" (change)="toggleItem(status)">
             {{idx+1}}. {{ status.text }}
         </md-checkbox>
     </div>

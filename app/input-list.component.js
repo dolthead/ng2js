@@ -3,25 +3,27 @@
     app.InputListComponent =
         ng.core.Component({
             selector: 'input-list',
-            templateUrl: 'app/input-list.component.html',
-            stylesx:[
-                'input.ng-touched.ng-invalid { border: solid darkred 3px; }'
-            ]
+            templateUrl: 'app/input-list.component.html'
         })
         .Class({
-            constructor: function InputListComponent() {
-                var self = this;
-                self.status = '';
-                self.statusList = [];
 
-                self.addStatus = function(myForm) {
+            constructor: [app.DataService, function InputListComponent(dataService) {
+
+                this.status = '';
+                this.statusList = dataService.dataList;
+
+                this.addStatus = function(myForm) {
                     if (!myForm.invalid) {
-                        self.statusList.push({text: this.status, completed: false});
-                        // this.status = '';
+                        dataService.addItem({text: this.status, completed: false});
                         myForm.resetForm();
                     }
                 }
-            }
+
+                this.toggleItem = function() {
+                    dataService.saveData();
+                }
+            }]
+
         });
 
 })(window.app || (window.app = {}));
