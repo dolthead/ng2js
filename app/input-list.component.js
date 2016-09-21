@@ -17,11 +17,16 @@
                         dataService.addItem({text: this.status, completed: false});
                         myForm.resetForm();
                     }
-                }
+                };
 
                 this.toggleItem = function() {
                     dataService.saveData();
-                }
+                };
+
+                this.deleteItem = function(index) {
+                    dataService.deleteItem(index);
+                };
+
             }]
 
         });

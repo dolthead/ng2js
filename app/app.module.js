@@ -8,11 +8,11 @@
             imports: [
                 ng.platformBrowser.BrowserModule,
                 ng.forms.FormsModule,
-                // ng.forms.FormGroup,
                 md.card.MdCardModule,
+                md.toolbar.MdToolbarModule,
                 md.button.MdButtonModule,
                 md.checkbox.MdCheckboxModule,
-                md.input.MdInputModule
+                md.input.MdInputModule,
                 // UIRouter
             ],
             declarations: [ // any components, directives and pipes defined in this module
@@ -25,7 +25,7 @@
         })
         .Class({
             constructor: function AppModule() {
-                // console.log(ng.forms);
+                // console.log(md);
             }
         });
 

@@ -1,15 +1,21 @@
-<form (ngSubmit)="addStatus(myForm)" class="form-inline" novalidate #myForm="ngForm">
-    <div class="form-group">
-        <md-input #newItem="ngModel" type="text" name="newItem" placeholder="New item"
-                  [(ngModel)]="status" required></md-input>
-        <button type="submit" md-raised-button color="primary">Add</button>
-    </div>
-</form>
+<!--<md-content>-->
+    <form (ngSubmit)="addStatus(myForm)" class="form-inline" novalidate #myForm="ngForm">
+        <div class="form-group">
+            <md-input #newItem="ngModel" type="text" name="newItem" placeholder="New item"
+                      [(ngModel)]="status" required></md-input>
+            <button type="submit" md-raised-button color="primary">Add</button>
+        </div>
+    </form>
 
-<div>
-    <div *ngFor="let status of statusList; let idx = index">
-        <md-checkbox [(ngModel)]="status.completed" (change)="toggleItem(status)">
-            {{idx+1}}. {{ status.text }}
-        </md-checkbox>
+    <div>
+        <div class="ngfor-animation" *ngFor="let status of statusList; let idx = index">
+            <md-checkbox [(ngModel)]="status.completed" (change)="toggleItem(status)">
+                {{idx+1}}. {{ status.text }}
+            </md-checkbox>
+            <button md-button color="warn" (click)="deleteItem(idx)">
+                <i class="material-icons">delete</i>
+            </button>
+
+        </div>
     </div>
-</div>
+<!--</md-content>-->

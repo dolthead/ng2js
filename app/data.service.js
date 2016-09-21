@@ -15,6 +15,13 @@
             }
         },
 
+        deleteItem: function(index) {
+            if (this.dataList.length > index >= 0) {
+                this.dataList.splice(index, 1);
+                this.saveData();
+            }
+        },
+
         saveData: function() {
             localStorage.setItem(STORAGE_NAME, JSON.stringify(this.dataList));
         }
